@@ -57,7 +57,7 @@ final int SNIPERRIFLE = 3;
 final int SHOTGUN = 4;
 
 void setup(){
-  size(1200,800);
+  size(3440,1300);
   // load GIFS
   manUp = new gif(4,"manUpAnimation");
   manDown = new gif(4,"manDownAnimation");
