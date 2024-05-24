@@ -57,7 +57,7 @@ final int SNIPERRIFLE = 3;
 final int SHOTGUN = 4;
 
 void setup(){
-  size(3440,1300);
+  size(1200,800);
   // load GIFS
   manUp = new gif(4,"manUpAnimation");
   manDown = new gif(4,"manDownAnimation");
@@ -78,13 +78,13 @@ void setup(){
   win=4;
   myObjects = new LinkedList<gameObjects>();
   
-             // load Images
- mapImage= loadImage("map.png");
+ // load Images
+ // map.png, EasyMap.png
+ mapImage= loadImage("EasyMap.png");
  mapFloor = loadImage("mapFloor(2).png");
  mapFloor.resize(width-110,height-120);
  characterImage = loadImage("doomCharacter.png");
   map= new Room [mapImage.height][mapImage.width];
-  
   
   initializeDarkness();
   up=down=left=right=space=false;
@@ -133,42 +133,44 @@ void initiateMap(){
   int my = 0;
  while(my<=mapImage.height-1){
     color c = mapImage.get(mx,my);
-      if(c != #FFFFFF){
-          map[my][mx]=new Room();
-      }
-        if(c == easyDifficulty){
-           myObjects.add(new Enemy(100,150,mx,my,(int)random(width/4,width*3/4),(int)random(height/4,height*3/4))); 
-        }
-        else if(c == mediumDifficulty){
-           myObjects.add(new Follower(100,100,mx,my,width/2,height/2));
-        }
-        else if(c == hardDifficulty){
-          myObjects.add(new Follower(100,100,mx,my,3*width/4,height/2));
-          myObjects.add(new Follower(100,100,mx,my,width/4,height/2));
-        }
-        else if(c == hardDifficulty){
-          myObjects.add(new Follower(150,100,mx,my,3*width/4,height/2));
-          myObjects.add(new Follower(150,100,mx,my,width/4,height/2));
-          myObjects.add(new Follower(150,100,mx,my,3*width/4,height/4));
-        }
-        else if(c == impossibleDifficulty){
-          myObjects.add(new Follower(200,100,mx,my,3*width/4,height/2));
-          myObjects.add(new Follower(200,100,mx,my,width/4,height/2));
-          myObjects.add(new Follower(200,100,mx,my,3*width/4,height/4));
-          myObjects.add(new Follower(200,100,mx,my,width/4,height/4*3));
-        }
-       else if(c == endingRoom){
-          endingRoomX=mx;
-          endingRoomY=my;
-          myObjects.add(new Follower(150,100,0,0,width/4,height/2));
-          myObjects.add(new Follower(150,100,0,0,3*width/4,height/2));
-          myObjects.add(new Follower(150,100,mx,my,3*width/4,height/4));
-          myObjects.add(new Follower(150,100,mx,my,width/4,height/4*3));
-          myObjects.add(new Enemy(200,150,mx,my,150,150)); 
-          myObjects.add(new Enemy(200,150,mx,my,150,height-150)); 
-          myObjects.add(new Enemy(200,150,mx,my,width-150,150)); 
-          myObjects.add(new Enemy(200,150,mx,my,width-150,height-150)); 
-        }
+    System.out.println(hex(c));
+    if(c != #FFFFFF){
+        map[my][mx]=new Room();
+    }
+    
+    if(c == easyDifficulty){
+       myObjects.add(new Enemy(100,150,mx,my,(int)random(width/4,width*3/4),(int)random(height/4,height*3/4))); 
+    }
+    else if(c == mediumDifficulty){
+       myObjects.add(new Follower(100,100,mx,my,width/2,height/2));
+    }
+    else if(c == hardDifficulty){
+      myObjects.add(new Follower(100,100,mx,my,3*width/4,height/2));
+      myObjects.add(new Follower(100,100,mx,my,width/4,height/2));
+    }
+    else if(c == hardDifficulty){
+      myObjects.add(new Follower(150,100,mx,my,3*width/4,height/2));
+      myObjects.add(new Follower(150,100,mx,my,width/4,height/2));
+      myObjects.add(new Follower(150,100,mx,my,3*width/4,height/4));
+    }
+    else if(c == impossibleDifficulty){
+      myObjects.add(new Follower(200,100,mx,my,3*width/4,height/2));
+      myObjects.add(new Follower(200,100,mx,my,width/4,height/2));
+      myObjects.add(new Follower(200,100,mx,my,3*width/4,height/4));
+      myObjects.add(new Follower(200,100,mx,my,width/4,height/4*3));
+    }
+    else if(c == endingRoom){
+      endingRoomX=mx;
+      endingRoomY=my;
+      myObjects.add(new Follower(150,100,0,0,width/4,height/2));
+      myObjects.add(new Follower(150,100,0,0,3*width/4,height/2));
+      myObjects.add(new Follower(150,100,mx,my,3*width/4,height/4));
+      myObjects.add(new Follower(150,100,mx,my,width/4,height/4*3));
+      myObjects.add(new Enemy(200,150,mx,my,150,150)); 
+      myObjects.add(new Enemy(200,150,mx,my,150,height-150)); 
+      myObjects.add(new Enemy(200,150,mx,my,width-150,150)); 
+      myObjects.add(new Enemy(200,150,mx,my,width-150,height-150)); 
+    }
     mx+=1;
     if(mx>=mapImage.width){
       mx=0;
@@ -177,5 +179,5 @@ void initiateMap(){
  }
   currentRoom = map[1][1];
   mapX = 1;
-  mapY=1;
+  mapY = 1;
 }
