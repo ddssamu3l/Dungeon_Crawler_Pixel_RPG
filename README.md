@@ -38,8 +38,11 @@ Here's the demo of the 1x4 map that is generated off of "EasyMap.png"
 
 https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/1cbfa8b6-8be6-4e8c-aaf1-422bd4fa653c
 
+Here's the demo of the 8x8 map that is generated off of "map.png"
 
-Notice how there are only entrances/exits to other rooms placed where there are adjacent coloured pixels in the .png map image. In the video above, the player starts in room (1,1) and that room only has a single entrance to room (2,1). Room (2,1) has an exit/entrance on the left and right side, which matches the locations where room (2,1) would actually have adjacent rooms. This feature is also non-manually implemented on a room by room basis. 
+https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/9b124040-1806-4722-ad0b-dc9db601e148
+
+Notice how there are only entrances/exits to other rooms placed where there are adjacent coloured pixels in the .png map image. In the first video above of the map generated from "EasyMap.png", the player starts in room (1,1) and that room only has a single entrance to room (2,1). Room (2,1) has an exit/entrance on the left and right side, which matches the locations where room (2,1) would actually have adjacent rooms. This feature is also non-manually implemented on a room by room basis. 
 
 ## How to know where neighbor rooms exist and create a portal that takes the player to the next room:
 
