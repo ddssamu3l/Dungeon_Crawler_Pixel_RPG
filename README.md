@@ -16,7 +16,7 @@ After some brain-storming and GoodNotes sketches, I realized the level deisgns I
 
 Internally, the entire map of the dungeon is stored in a 2d array that stores a “Room” object.
 
-The game uses nested loops to iterate through ever pixel of the image.
+The game uses nested loops to iterate through every pixel of the image.
 For each pixel at (i,j), where i<n and j<m, if the pixel isn’t white (#FFFFFF), the game initializes a new “Room” object at map[I][j]. In other words, if a pixel at (I,j) is white, then map[I][j] is null;
 
 The program then considers the colour of the pixel to determine the amount and types of enemies that will be spawned in a particular room. For instance, if the image has a pixel that is coloured green (#67d771), then it will spawn a single stationary “tower” enemy. This specific green colour is defined and named “EasyDifficulty” in the game’s global variables. The only restriction to the .png image is that every non-coloured pixel should all be white, and the pixel at (1,1) should always be black (#000000) because it is where the player is always spawned in.
@@ -32,10 +32,12 @@ https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/1cbfa8b6-
 
 Notice how there are only entrances/exits to other rooms placed where there are adjacent coloured pixels in the .png map image. In the video above, the player starts in room (1,1) and that room only has a single entrance to room (2,1). Room (2,1) has an exit/entrance on the left and right side, which matches the locations where room (2,1) would actually have adjacent rooms. This feature is also non-manually implemented on a room by room basis. 
 
+## How to know where neighbor rooms exist and create a portal that takes the player to the next room:
+
 When generating a room, the game has to also consider which adjacent rooms the player can enter from the room that the player is currently in, and appropriately draw an entrance/exit to the next adjacent room at the correct locations (north, south, east and west entrance/exits).
 
 To achieve this, the “Room” object just has to consider if the four adjacent indices in the Rooms array is null or not. If the player is currently in Room (i,j) or map[I][j], then the game checks if map[i-1][j], map[I+1][j], map[i][j+1], map[I][j-1] is null or not. If map[I+1][j] is not null for instance, then it means there is an adjacent room to the right of the current room and there should be an exit trigger at the right of the current room that sets the player’s location to map[I+1][j] when entered. 
 
-The video demo below shows the room generation mechanic at work. 
+This code checks whether an exit should be placed in each direction of the current room. It can be found in "room.pde"
 
-There are three .png images that generate three different maps in the /data files. “EasyMap.png” generates a map of only easy levels, “MediumMap.png” generates both easy and medium difficulty levels, and “map.png” generates the hardest and largest map that the game is intended to be played with. 
+![rpgProjectCheckExitCode](https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/81c0614f-6d87-416d-b54d-56364f92749e)
