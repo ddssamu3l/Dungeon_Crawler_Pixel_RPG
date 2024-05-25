@@ -3,7 +3,7 @@ Currently my largest Processing 4 project, this project summarizes all the skill
 
 # Image-Based Procedural Level Generation
 
-The initialization of the dungeon takes an m by n .png image as input and reads the colours of the image’s individual pixels to generate each “room” of the dungeon. 
+The highlight of this project is the image-based procedural level generation that generates the game's map based off of the colors of the pixels of a .png image, which can offer tens of thousands of possible maps with no extra coding.
 
 Internally, the entire map of the dungeon is stored in a 2d array that stores a “Room” object. The Rooms array is the same dimensions as the .png image (Room[][] map = new Room[n][m]);
 
@@ -12,7 +12,7 @@ Internally, the entire map of the dungeon is stored in a 2d array that stores a 
 The game uses nested loops to iterate through ever pixel of the image.
 For each pixel at (i,j), where i<n and j<m, if the pixel isn’t white (#FFFFFF), the game initializes a new “Room” object at map[I][j]. In other words, if a pixel at (I,j) is white, then map[I][j] is null;
 
-The program then considers the colour of the pixel to determine the amount and types of enemies that will be spawned in a particular room. For instance, if the image has a pixel that is coloured green (#06d771), then it will spawn a single stationary “tower” enemy. This specific green colour is defined and named “EasyDifficulty” in the game’s global variables. The only restriction to the .png image is that every non-coloured pixel should all be white, and the pixel at (1,1) should always be black (#000000) because it is where the player is always spawned in.
+The program then considers the colour of the pixel to determine the amount and types of enemies that will be spawned in a particular room. For instance, if the image has a pixel that is coloured green (#67d771), then it will spawn a single stationary “tower” enemy. This specific green colour is defined and named “EasyDifficulty” in the game’s global variables. The only restriction to the .png image is that every non-coloured pixel should all be white, and the pixel at (1,1) should always be black (#000000) because it is where the player is always spawned in.
 
 Here’s an example of a map that contains only “EasyDifficulty” rooms. The image is called “EasyMap.png” in the /data folder. It generates a series of rooms in a straight line. 
 
