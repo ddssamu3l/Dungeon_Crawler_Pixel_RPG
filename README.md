@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=dQJ5l9eZSww
 
 The highlight of this project is the image-based procedural level generation that generates the game's map based off of the colors of the pixels of a .png image, which can offer tens of thousands of possible maps with no extra coding.
 
+Video Demo of Image-Based Level Generation on YouTube: https://youtu.be/k2ScI0a8NO8
+
 The inspiration for this feature came from coding the level data in a much earlier version of the game. Initially, this project was only intended to have a single map implemented by hard-coding each room since the level wasn't planned to be very big and manual initialization offered customizability to each individual room. However, when actually proceeding with this approach, length of repetitive code quickly became apparent that the hard-coding approach is going to be too dreadful to implement and offered no flexibility for change if the level design/layout was ever to be changed. 
 
 After some brain-storming and GoodNotes sketches, I realized the level deisgns I've created are all arranged in a grid-shaped arrangement where each room have adjacent rooms in the North, South, East and West direction. I noticed that I can represent my level maps through pixels of an image. A white dot can mean empty space, and a black dot can represent a room where the play can traverse through. 
