@@ -14,7 +14,9 @@ After some brain-storming and GoodNotes sketches, I realized the level deisgns I
 
 ## How the procedural generation works:
 
-The program reads the pixels of a .png image stored in the /data folder and uses the colors of the pixels as data to generate a map. Here’s an example of a .png image being used to generate a map. The image is called “EasyMap.png” in the /data folder. It generates a series of "Easy" difficulty rooms in a straight line. 
+The program reads the pixels of a .png image stored in the /data folder and uses the colors of the pixels as data to generate a map. 
+
+Here’s an example of a .png image being used to generate a map. The image is called “EasyMap.png” in the /data folder. It generates a series of "Easy" difficulty rooms in a straight line. 
 
 **Note that the image shown here is not the actual "EasyMap.png" folder that is stored in the /data folder as the true "EasyMap.png" is only a 10x10 image which is too small to be displayed**
 
@@ -43,3 +45,47 @@ To achieve this, the “Room” object just has to consider if the four adjacent
 This code checks whether an exit should be placed in each direction of the current room. It can be found in "room.pde"
 
 ![rpgProjectCheckExitCode](https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/81c0614f-6d87-416d-b54d-56364f92749e)
+
+
+# Other features:
+
+## Weapons:
+There are 3 usable weapons in this game. The play starts off equipped with the shotgun, and the autopistol and sniper rifle can be obtained by taking enemy drops.
+
+Shotgun:
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/b929fb44-33bc-4b46-b003-d31b9243242d" width="200" />
+
+Auto Pistol:
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/9c60a827-5e1d-4ccf-ba96-0a6ad70985a4" width="150" />
+
+Sniper Rifle:
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/20365893-401b-45d9-b628-ee4a1ed11351" width="200" />
+
+## Enemy Types:
+Two types of enemies are in this game. A stationary "Tower" type enemy, and a moving "Follower" type enemy that is coded to follow the player. Both enemies fire projectiles to try and damage the player.
+
+Tower:
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/93d68a93-fe32-4f13-8b4c-b169f2a12891" width="150" />
+
+Follower:
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/bed0a82a-8366-4397-8009-e16147c7f29c" width="150" />
+
+## Fog of War
+
+There is a Fog of War system in this game that simulates a light source that follows the player around in a dark dungeon. This effect is done by placing a layer of black squares over the window, and reducing each square's opacity the closer a particular square is to the player.
+
+![Screenshot 2024-05-24 225902](https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/4d43fc5e-ffad-46ac-940e-aa7372efcb03)
+
+
+![Screenshot 2024-05-24 225820](https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/03e2f331-c19b-4907-bd41-233633c38282)
+
+
+
+
+
+
