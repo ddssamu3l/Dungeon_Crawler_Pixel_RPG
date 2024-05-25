@@ -3,6 +3,9 @@ Currently my largest Processing 4 project, this project summarizes all the skill
 
 ![Screenshot (62)](https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/b17e0165-7a17-4702-a3b7-bec02277df72)
 
+Video Demo Playthrough linked on YouTube:
+https://www.youtube.com/watch?v=dQJ5l9eZSww
+
 # Image-Based Procedural Level Generation
 
 The highlight of this project is the image-based procedural level generation that generates the game's map based off of the colors of the pixels of a .png image, which can offer tens of thousands of possible maps with no extra coding.
