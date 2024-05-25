@@ -14,6 +14,12 @@ After some brain-storming and GoodNotes sketches, I realized the level deisgns I
 
 ## How the procedural generation works:
 
+The program reads the pixels of a .png image stored in the /data folder and uses the colors of the pixels as data to generate a map. Here’s an example of a .png image being used to generate a map. The image is called “EasyMap.png” in the /data folder. It generates a series of "Easy" difficulty rooms in a straight line. 
+
+**Note that the image shown here is not the actual "EasyMap.png" folder that is stored in the /data folder as the true "EasyMap.png" is only a 10x10 image which is too small to be displayed**
+
+<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/3cfb590e-b28e-4a60-a614-67a4d835595a" width="200" />
+
 Internally, the entire map of the dungeon is stored in a 2d array that stores a “Room” object.
 
 The game uses nested loops to iterate through every pixel of the image.
@@ -21,11 +27,7 @@ For each pixel at (i,j), where i<n and j<m, if the pixel isn’t white (#FFFFFF)
 
 The program then considers the colour of the pixel to determine the amount and types of enemies that will be spawned in a particular room. For instance, if the image has a pixel that is coloured green (#67d771), then it will spawn a single stationary “tower” enemy. This specific green colour is defined and named “EasyDifficulty” in the game’s global variables. The only restriction to the .png image is that every non-coloured pixel should all be white, and the pixel at (1,1) should always be black (#000000) because it is where the player is always spawned in.
 
-Here’s an example of a .png image being used to generate a map. The image is called “EasyMap.png” in the /data folder. It generates a series of "Easy" difficulty rooms in a straight line. 
-
-**Note that the image shown here is not the actual "EasyMap.png" folder that is stored in the /data folder as the true "EasyMap.png" is only a 10x10 image which is too small to be displayed**
-
-<img src= "https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/3cfb590e-b28e-4a60-a614-67a4d835595a" width="200" />
+Here's the demo of the 1x4 map that is generated off of "EasyMap.png"
 
 https://github.com/ddssamu3l/Dungeon_Crawler_Pixel_RPG/assets/72890797/1cbfa8b6-8be6-4e8c-aaf1-422bd4fa653c
 
